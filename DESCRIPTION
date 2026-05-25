@@ -1,9 +1,16 @@
 Package: cookie
-Title: What the Package Does (One Line, Title Case)
+Title: Cookie Parser Middleware
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Julio", "Collazos", , "amarullazo626@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0009-0006-5503-0997")),
+    person(, "cookie contributors", role = c("ctb", "cph"),
+           comment = "cookie contributors; authors listed in <https://github.com/jshttp/cookie/graphs/contributors>"),
+    person(, "cookie-parser contributors", role = c("ctb", "cph"),
+           comment = "cookie-parser contributors; authors listed in <https://github.com/expressjs/cookie-parser/graphs/contributors>"),
+    person(, "cookie-signature contributors", role = c("ctb", "cph"),
+           comment = "cookie-signature contributors; authors listed in <https://github.com/tj/node-cookie-signature/graphs/contributors>")
+  )
+Description: Parse the Cookie HTTP header, signed or unsigned.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
