@@ -1,6 +1,10 @@
 #' Parse a Cookie header
 #' @export
 parseCookie <- function(str, options = NULL) {
+  if (is.null(options)) {
+    options <- decode
+  }
+
   obj <- list()
 
   len <- nchar(str)
@@ -10,7 +14,7 @@ parseCookie <- function(str, options = NULL) {
     return(obj)
   }
 
-  dec <- options$decode %||% decode
+  dec <- options
   index <- 1
   while (index < len) {
     eqIdx <- eqIndex(str, index, len)

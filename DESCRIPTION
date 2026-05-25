@@ -12,5 +12,11 @@ RoxygenNote: 7.3.3
 Imports: 
     secretbase
 Suggests: 
-    testthat (>= 3.0.0)
+    curl,
+    httpuv,
+    later,
+    R6,
+    routing,
+    testthat (>= 3.0.0),
+    yyjsonr
 Config/testthat/edition: 3
