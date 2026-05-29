@@ -1,5 +1,5 @@
 Package: cookie
-Title: Cookie Parser Middleware
+Title: HTTP Cookies Parser Middleware
 Version: 0.0.0.9000
 Authors@R: c(
     person("Julio", "Collazos", , "amarullazo626@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0009-0006-5503-0997")),
