@@ -1,7 +1,5 @@
 cookieParser <- function(secret, options = NULL) {
   secrets <- as.list(secret %||% list())
-  # To keep R CMD check happy
-  forward <- NULL
 
   function(req, res) {
     if (!is.null(req$cookies)) {
@@ -66,3 +64,9 @@ signedCookies <- function(obj, secret) {
 
   ret
 }
+
+
+# To keep R CMD check happy
+utils::globalVariables(
+  "forward"
+)
