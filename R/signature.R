@@ -16,6 +16,7 @@ sign <- function(val, secret) {
 #' input <- sign("hello","tobiiscool")
 #' unsign(input,"tobiiscool")
 #' unsign(input,"luna")
+#' @export
 unsign <- function(input, secret) {
   stopifnot("Signed cookie must be a string" = is.character(input))
   tentativeValue <- strsplit(input, split = ".", fixed = TRUE)[[1]][1]
