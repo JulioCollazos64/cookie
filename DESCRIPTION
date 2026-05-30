@@ -8,7 +8,9 @@ Authors@R: c(
     person(, "cookie-parser contributors", role = c("ctb", "cph"),
            comment = "cookie-parser contributors; authors listed in <https://github.com/expressjs/cookie-parser/graphs/contributors>"),
     person(, "cookie-signature contributors", role = c("ctb", "cph"),
-           comment = "cookie-signature contributors; authors listed in <https://github.com/tj/node-cookie-signature/graphs/contributors>")
+           comment = "cookie-signature contributors; authors listed in <https://github.com/tj/node-cookie-signature/graphs/contributors>"),
+    person(, "httpuv authors", role = c("ctb", "cph"),
+           comment = "Development of the http_date_string function")
   )
 Description: Parse the Cookie HTTP header, signed or unsigned.
 License: MIT + file LICENSE
