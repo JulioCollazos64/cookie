@@ -1,6 +1,15 @@
-#' Sign
+#' Sign a Cookie Value
+#'
+#' Sign the given `val` with `secret`.
+#'
+#' @param val A string. The cookie value to sign.
+#' @param secret The secret key used to generate the signature.
+#'
+#' @return A string of the form `"<val>.<signature>"`.
+#'
 #' @examples
-#' sign("hello","tobiiscool")
+#' sign("hello", "tobiiscool")
+#'
 #' @export
 sign <- function(val, secret) {
   stopifnot("Cookie value must be a string" = is.character(val))
@@ -11,11 +20,22 @@ sign <- function(val, secret) {
   paste0(val, ".", rand)
 }
 
-#' Unsign
+#' Unsign a Cookie Value
+#'
+#' Verifies the signature of a signed cookie value and returns the original
+#' value if valid, or `FALSE` if the signature does not match.
+#'
+#' @param input A string. A signed cookie value produced by [sign()].
+#' @param secret The secret key to verify against.
+#'
+#' @return The original unsigned value if verification succeeds, `FALSE`
+#'   otherwise.
+#'
 #' @examples
-#' input <- sign("hello","tobiiscool")
-#' unsign(input,"tobiiscool")
-#' unsign(input,"luna")
+#' input <- sign("hello", "tobiiscool")
+#' unsign(input, "tobiiscool")
+#' unsign(input, "luna")
+#'
 #' @export
 unsign <- function(input, secret) {
   stopifnot("Signed cookie must be a string" = is.character(input))

@@ -1,3 +1,18 @@
+#' Cookie Parser Middleware
+#'
+#' Creates a middleware function that parses the `Cookie` HTTP header and
+#' populates `req$cookies`. When a `secret` is provided, signed cookies are
+#' verified and exposed on `req$signedCookies`.
+#'
+#' @param secret A character vector or list of strings used to sign
+#'   and verify cookies. Optional.
+#' @param options A function used to decode cookie values. Defaults to
+#'   [utils::URLdecode()].
+#'
+#' @return A middleware function that sets `req$cookies`,
+#'   `req$signedCookies`, and `req$secret`, then calls `forward()`.
+#'
+#' @export
 cookieParser <- function(secret = NULL, options = NULL) {
   secrets <- as.list(secret %||% list())
 

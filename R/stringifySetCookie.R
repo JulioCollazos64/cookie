@@ -109,3 +109,35 @@ stringifySetCookie <- function(name, val = NULL, ...) {
 
   str
 }
+
+#' Serialise a Set-Cookie Header
+#'
+#' Serialises a cookie name-value pair into a `Set-Cookie` header string.
+#'
+#' @param name A string with the cookie name, or a list with `$name` and
+#'   `$value` elements (in which case `val` is ignored).
+#' @param val A string. The cookie value.
+#' @param ... Additional cookie attributes:
+#'   \describe{
+#'     \item{`encode`}{A function to encode the cookie value. Defaults to
+#'       [utils::URLencode()].}
+#'     \item{`maxAge`}{An integer. Number of seconds until the cookie expires.}
+#'     \item{`domain`}{A string. The cookie domain.}
+#'     \item{`path`}{A string. The cookie path.}
+#'     \item{`expires`}{A `Date`, `POSIXct`, or `POSIXt`. The expiry date.}
+#'     \item{`httpOnly`}{Logical. Adds the `HttpOnly` attribute.}
+#'     \item{`secure`}{Logical. Adds the `Secure` attribute.}
+#'     \item{`partitioned`}{Logical. Adds the `Partitioned` attribute.}
+#'     \item{`priority`}{A string: `"low"`, `"medium"`, or `"high"`.}
+#'     \item{`sameSite`}{A string (`"strict"`, `"lax"`, `"none"`) or logical
+#'       (`TRUE` maps to `"Strict"`).}
+#'   }
+#'
+#' @return A `Set-Cookie` header string.
+#'
+#' @examples
+#' serialise("session", "abc123")
+#' serialise("id", "42", httpOnly = TRUE, secure = TRUE, sameSite = "lax")
+#'
+#' @export
+serialise <- stringifySetCookie
