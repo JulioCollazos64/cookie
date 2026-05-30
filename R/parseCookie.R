@@ -1,5 +1,6 @@
 #' Parse a Cookie header
-#' @export
+#' @keywords internal
+#' @noRd
 parseCookie <- function(str, options = NULL) {
   if (is.null(options)) {
     options <- decode
