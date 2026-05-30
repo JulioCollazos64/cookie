@@ -1,4 +1,4 @@
-cookieParser <- function(secret, options = NULL) {
+cookieParser <- function(secret = NULL, options = NULL) {
   secrets <- as.list(secret %||% list())
 
   function(req, res) {
