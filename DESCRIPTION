@@ -12,7 +12,11 @@ Authors@R: c(
     person(, "httpuv authors", role = c("ctb", "cph"),
            comment = "Development of the http_date_string function")
   )
-Description: Parse the Cookie HTTP header, signed or unsigned.
+Description: A cookie is a piece of data sent from a web server to a web client which helps
+    in overcoming the statelessness constraint of the HTTP protocol. This package provides the tools
+    to work with them in the form of a cookie parser middleware function, meant to be attached to
+    a bigger R web application, and utilities to write, sign and unsign a cookie. For more details
+    see the Mozilla Developer Network (MDN) web documentation in <https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
